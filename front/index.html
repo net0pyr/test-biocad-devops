@@ -1,0 +1,49 @@
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, world!</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .background {
+            background-image: url('world.jpg');
+            background-size: cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="greetMessage" class="hidden">Привет, мир!</div>
+    <button id="greetButton">Поздороваться с миром</button>
+
+    <script>
+        document.getElementById('greetButton').addEventListener('click', function () {
+            document.body.classList.add('background');
+            document.getElementById('greetMessage').classList.remove('hidden');
+        });
+    </script>
+</body>
+
+</html>
