@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: biocad-test-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: biocad-test
+  template:
+    metadata:
+      labels:
+        app: biocad-test
+    spec:
+      containers:
+      - name: biocad-test-container
+        image: net0pyr/biocad-test-devops:latest 
+        ports:
+        - containerPort: 32777
